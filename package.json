@@ -2,12 +2,12 @@
   "name": "movies",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/app.js",
+  "main": "dist/app.js",
   "type": "module",
   "scripts": {
     "build": "tsc && tsc-alias",
     "dev": "npx nodemon src/app.ts",
-    "start": "node dist/src/app.d.ts"
+    "start": "node dist/app.js"
   },
   "keywords": [],
   "author": "",
