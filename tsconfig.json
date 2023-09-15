@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "allowJs": true,
+    "moduleResolution": "Node",
+    "baseUrl": "src",
+    "emitDeclarationOnly": true,
+    "composite": true,
+    "allowImportingTsExtensions": true
+  },
+  "ts-node": {
+    "esm": true
+  },
+}
