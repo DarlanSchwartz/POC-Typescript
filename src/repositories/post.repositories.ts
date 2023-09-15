@@ -1,3 +1,4 @@
+import { number } from "joi";
 import db from "../database/database.connection.ts";
 import { Post } from "../protocols/post.types";
 
@@ -7,12 +8,25 @@ async function create(post: Post): Promise<void> {
     await db.query(query, [name, writerId, likeCount, content, createdAt]);
 }
 
-async function getAll(): Promise<Array<Post>> {
-    const query = `SELECT * FROM posts;`;
-    const dbPosts = await db.query(query, []);
+async function getAll(limit: number, name: string): Promise<Array<Post>> {
+    let query = `SELECT * FROM posts`;
+    let params: any[] = [];
+  
+    if (name && name !== "") {
+      query += ` WHERE name ILIKE $${params.length + 1}`;
+      params.push(`%${name}%`);
+    }
+  
+    if (limit && limit !== 0) {
+      query += ` LIMIT $${params.length + 1}`;
+      params.push(limit);
+    }
+  
+    const dbPosts = await db.query(query, params);
     const posts: Array<Post> = dbPosts.rows;
     return posts;
-}
+  }
+  
 
 async function like(postId: number): Promise<void> {
     const query = `UPDATE posts SET likecount = likecount + 1 WHERE id = $1;`;

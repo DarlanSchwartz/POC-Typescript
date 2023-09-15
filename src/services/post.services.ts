@@ -4,8 +4,8 @@ import { Post } from "../protocols/post.types";
 import PostRepository from "../repositories/post.repositories";
 import createDateFromDDMMYYYY from "./date.services";
 
-async function getAll(): Promise<Array<Post>> {
-  const posts = await PostRepository.getAll();
+async function getAll(limit : number,name:string): Promise<Array<Post>> {
+  const posts = await PostRepository.getAll(limit,name);
   return posts;
 }
 

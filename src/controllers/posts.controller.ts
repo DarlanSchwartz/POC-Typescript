@@ -4,7 +4,9 @@ import { Post } from "protocols/post.types.ts";
 import httpStatus from "http-status";
 
 async function getAll(req: Request, res: Response) {
-  const posts = await PostService.getAll();
+  const limit = Number(req.query.limit);
+  const name =req.query.name;
+  const posts = await PostService.getAll(limit,name?.toString());
   return res.send(posts);
 }
 

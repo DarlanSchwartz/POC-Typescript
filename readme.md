@@ -23,7 +23,7 @@
 
 
 ```bash
-/posts
+/posts -> queries : ?limit=10 -- ?name=PostName
 ```
 - Response
 ```javascript
