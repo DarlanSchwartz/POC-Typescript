@@ -8,7 +8,7 @@ const db: Pool = new Pool({
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
     database: process.env.DATABASE_NAME,
-    ssl: process.env.NODE_ENV == "production" ? true : false
+    ssl: process.env.NODE_ENV == "production" ? true : true
 })
 
 db.connect((error, client, done) => {

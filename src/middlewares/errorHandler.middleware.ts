@@ -1,8 +1,10 @@
 import httpStatus from "http-status";
 import { NextFunction, Request, Response } from "express";
-import ErrorType from "protocols/error.types.ts";
+import { ErrorType } from "../protocols/error.types.ts";
 
 export default function errorHandler(error, req: Request, res: Response, next: NextFunction) {
+
+    console.log(error);
     switch (error.type) {
         case ErrorType.CONFLICT:
             return res.status(httpStatus.CONFLICT).send("Conflict: " + error.message);

@@ -1,5 +1,5 @@
-import db from "database/database.connection.ts";
-import { Post } from "protocols/post.types";
+import db from "../database/database.connection.ts";
+import { Post } from "../protocols/post.types";
 
 async function create(post: Post): Promise<void> {
     const { writerId, name, likeCount, content, createdAt } = post;
@@ -27,18 +27,24 @@ async function edit(newPost: Post, postId: number): Promise<void> {
                 name = $1,
                 writerid = $2,
                 likecount = $3,
-                content = $4',
-                createdat = $5'
+                content = $4,
+                createdat = $5
             WHERE id = $6;
         `;
     await db.query(query, [name, writerId, likeCount, content, createdAt, postId]);
 }
 
 async function remove(postId : number): Promise<void> {
-    const query = `DELETE * FROM posts WHERE id = $1`;
+    const query = `DELETE FROM posts WHERE id = $1`;
     await db.query(query, [postId]);
 }
 
-const PostRepository = { create, getAll, like, edit, remove };
+async function postIdExists(postId : number): Promise<boolean> {
+    const query = `SELECT * FROM posts WHERE id = $1`;
+    const posts = await db.query(query, [postId]);
+    return posts.rowCount > 0;
+}
+
+const PostRepository = { create, getAll, like, edit, remove ,postIdExists};
 
 export default PostRepository;
