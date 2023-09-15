@@ -8,7 +8,8 @@
     "baseUrl": "src",
     "emitDeclarationOnly": true,
     "composite": true,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "types": ["node"]
   },
   "ts-node": {
     "esm": true
