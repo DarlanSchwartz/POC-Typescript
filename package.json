@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/app.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "dev": "npx nodemon src/app.ts",
     "start": "node dist/app.js"
   },
@@ -32,5 +32,8 @@
     "tsc": "^2.0.4",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": "18.17.1"
   }
 }
