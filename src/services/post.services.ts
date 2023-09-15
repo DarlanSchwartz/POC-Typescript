@@ -13,7 +13,7 @@ async function like(postId: number): Promise<void> {
 
 }
 
-async function update(postId: number): Promise<void> {
+async function update(postId: number, newPost : Post): Promise<void> {
 
 }
 

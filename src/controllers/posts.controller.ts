@@ -23,8 +23,9 @@ async function like(req: Request, res: Response) {
 
 async function edit(req: Request, res: Response) {
   const id = Number(req.params.id);
+  const newPost : Post = req.body;
   if(!id) throw {type : ErrorType.BAD_REQUEST, message:`you need to pass an id to edit a post - id passed ${id}` };
-  await PostService.update(id);
+  await PostService.update(id,newPost);
   return res.sendStatus(204);
 }
 
