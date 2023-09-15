@@ -3,12 +3,11 @@
     "outDir": "dist",
     "esModuleInterop": true,
     "module": "CommonJS",
-    "allowJs": true,
     "moduleResolution": "Node",
     "baseUrl": "src",
     "types": ["node"]
   },
   "ts-node": {
     "esm": true
-  },
+  }
 }
