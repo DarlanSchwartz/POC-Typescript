@@ -1,5 +1,16 @@
 # This is a POC (Proof of concept) of Typescript for me.
 
+## Run
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
+
+
 ## Routes
 
 1. Create a Post
@@ -85,3 +96,4 @@ example: /update-post/420
 - Response -> Status code 204
 ```javascript
 ```
+## There is a dump.sql file in the project if you want to create the database on your localhost

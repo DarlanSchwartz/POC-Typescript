@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc && npx tsc-alias",
     "dev": "npx nodemon src/app.ts",
     "start": "node dist/app.js"
   },
@@ -30,6 +30,7 @@
     "express-async-errors": "^3.1.1",
     "http-status": "^1.7.0",
     "joi": "^17.9.2",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "tsc-alias": "^1.8.7"
   }
 }
