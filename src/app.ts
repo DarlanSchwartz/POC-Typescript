@@ -1,7 +1,7 @@
 import express, { Application, json } from "express";
 import "express-async-errors";
 import cors from 'cors';
-import postsRouter from "./routes/posts.routes.ts";
+import postsRouter from "./routes/posts.routes";
 
 const app : Application = express();
 

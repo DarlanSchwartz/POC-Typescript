@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "./src/app.js",
+  "type": "module",
   "scripts": {
     "build": "tsc && tsc-alias",
     "dev": "npx nodemon src/app.ts",
-    "start": "node dist/app.js"
+    "start": "node dist/src/app.d.ts"
   },
   "keywords": [],
   "author": "",
@@ -29,7 +30,6 @@
     "@types/pg": "^8.10.2",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
-    "tsc": "^2.0.4",
     "tsc-alias": "^1.8.7",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2"

@@ -1,6 +1,6 @@
 import httpStatus from "http-status";
 import { NextFunction, Request, Response } from "express";
-import { ErrorType } from "../protocols/error.types.ts";
+import { ErrorType } from "../protocols/error.types";
 
 export default function errorHandler(error, req: Request, res: Response, next: NextFunction) {
 

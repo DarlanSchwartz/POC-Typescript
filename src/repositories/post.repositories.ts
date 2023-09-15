@@ -1,5 +1,5 @@
 import { number } from "joi";
-import db from "../database/database.connection.ts";
+import db from "../database/database.connection";
 import { Post } from "../protocols/post.types";
 
 async function create(post: Post): Promise<void> {

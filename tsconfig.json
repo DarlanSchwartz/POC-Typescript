@@ -6,9 +6,6 @@
     "allowJs": true,
     "moduleResolution": "Node",
     "baseUrl": "src",
-    "emitDeclarationOnly": true,
-    "composite": true,
-    "allowImportingTsExtensions": true,
     "types": ["node"]
   },
   "ts-node": {

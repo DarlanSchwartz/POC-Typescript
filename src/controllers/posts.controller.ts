@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import PostService from "../services/post.services.ts";
-import { Post } from "protocols/post.types.ts";
+import PostService from "../services/post.services";
+import { Post } from "protocols/post.types";
 import httpStatus from "http-status";
 
 async function getAll(req: Request, res: Response) {
